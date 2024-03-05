@@ -1,0 +1,82 @@
+RewriteEngine On
+RewriteCond %{HTTPS} off
+RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [R,L]
+RewriteEngine On
+
+# RewriteRule ^Auth/Profile$ public/client/Profile.php [L]
+# RewriteRule ^Blog/([A-Za-z0-9-]+) public/client/XemBlog.php?id=$1 [L]
+
+# THÀNH VIÊN
+RewriteRule ^client/login$ pages/client/Login.php [L]
+RewriteRule ^client/napthe$ pages/client/Napthe.php [L]
+RewriteRule ^client/register$ pages/client/Register.php [L]
+RewriteRule ^client/chuyentien$ pages/client/Chuyentien.php [L]
+RewriteRule ^client/giftcode$ pages/client/Giftcode.php [L]
+RewriteRule ^client/napatm$ pages/client/NapAtm.php [L]
+RewriteRule ^category/([A-Za-z0-9-]+)$ pages/client/Category.php?slug=$1 [L]
+RewriteRule ^huongdan/([0-9]+)$ pages/client/Huongdan.php?id=$1 [L]
+    
+
+# Lịch sử
+RewriteRule ^client/history/chuyentien$ pages/client/LSChuyentien.php [L]
+RewriteRule ^client/history/napthe$ pages/client/LSNapthe.php [L]
+RewriteRule ^client/history/sodu$ pages/client/LSSoDu.php [L]
+RewriteRule ^client/history/momo$ pages/client/LSMomo.php [L]
+RewriteRule ^client/history/atm$ pages/client/LSAtm.php [L]
+RewriteRule ^client/history/key$ pages/client/LSKey.php [L]
+
+
+# API
+RewriteRule ^client/logout$ pages/client/Logout.php [L]
+
+# ADMIN
+RewriteRule ^Admin$ pages/admin/Home.php [L]
+RewriteRule ^Admin/Home$ pages/admin/Home.php [L]
+RewriteRule ^Admin/Users$ pages/admin/Users.php [L]
+RewriteRule ^Admin/User/Edit/([A-Za-z0-9-]+) pages/admin/EditUser.php?id=$1 [L]
+
+RewriteRule ^Admin/Category$ pages/admin/Category.php [L]
+RewriteRule ^Admin/Groups/([A-Za-z0-9-]+) pages/admin/Groups.php?id=$1 [L]
+RewriteRule ^Admin/UpdateHD/([A-Za-z0-9-]+) pages/admin/UpdateHD.php?id=$1 [L]
+RewriteRule ^Admin/Group/Edit/([A-Za-z0-9-]+) pages/admin/EditGroup.php?id=$1 [L]
+RewriteRule ^Admin/Category/Edit/([A-Za-z0-9-]+) pages/admin/EditCategory.php?id=$1 [L]
+RewriteRule ^Admin/ListKeys/([A-Za-z0-9-]+) pages/admin/ListKey.php?id=$1 [L]
+RewriteRule ^Admin/Gois/([0-9]+)/([0-9]+) pages/admin/Goi.php?id=$1&xoa=$2 [L]
+RewriteRule ^Admin/Gois/([0-9-]+) pages/admin/Goi.php?id=$1 [L]
+RewriteRule ^Admin/Keys/([0-9-]+) pages/admin/Keys.php?id=$1 [L]
+
+RewriteRule ^Admin/EditGois/([0-9-]+) pages/admin/EditGoi.php?id=$1 [L]
+RewriteRule ^Admin/Key-Sold$ pages/admin/Key-Sold.php [L]
+RewriteRule ^Admin/Bien-dong-so-du$ pages/admin/Biendongsodu.php [L]
+
+RewriteRule ^Admin/Cards$ pages/admin/Cards.php [L]
+RewriteRule ^Admin/LSBank$ pages/admin/LSBank.php [L]
+RewriteRule ^Admin/LSCards$ pages/admin/LSCards.php [L]
+RewriteRule ^Admin/LSTransfer$ pages/admin/LSTransfer.php [L]
+RewriteRule ^Admin/Giftcode$ pages/admin/Giftcode.php [L]
+RewriteRule ^Admin/Noti$ pages/admin/Noti.php [L]
+RewriteRule ^Admin/LSGift$ pages/admin/LSGift.php [L]
+
+
+
+RewriteRule ^Admin/Setting$ pages/admin/Setting.php [L]
+RewriteRule ^Admin/Withdraw$ pages/admin/Withdraw.php [L]
+RewriteRule ^Admin/Withdraw/Edit/([A-Za-z0-9-]+) pages/admin/EditWithdraw.php?id=$1 [L]
+RewriteRule ^Admin/Transfers$ pages/admin/Transfers.php [L]
+RewriteRule ^Admin/Setting/Card$ pages/admin/SettingCard.php [L]
+RewriteRule ^Admin/Blogs$ pages/admin/Blogs.php [L]
+RewriteRule ^Admin/Blog/Edit/([A-Za-z0-9-]+) pages/admin/EditBlog.php?id=$1 [L]
+RewriteRule ^Admin/BuyCard$ pages/admin/BuyCard.php [L]
+RewriteRule ^Admin/Topup$ pages/admin/Topup.php [L]
+RewriteRule ^Admin/Bank$ pages/admin/Bank.php [L]
+
+
+
+
+
+
+<Files 403.shtml>
+order allow,deny
+allow from all
+</Files>
+
